@@ -1,0 +1,10 @@
+{% extends "model-page.html" %}
+
+{% block content %}
+	<h1>Agendamentos</h1>
+	<ul>
+		{% for evento in eventos %}
+			<p>{{ evento.titulo }} - {{ evento.get_data_evento }}</p>
+		{% endfor %}
+	</ul>
+{% endblock %}

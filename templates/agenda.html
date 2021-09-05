@@ -2,6 +2,9 @@
 
 {% block content %}
 	<h1>Agendamentos</h1>
+	<a href="evento/">
+	<button type="button">Novo evento</button>
+</a>
 	<ul>
 		{% for evento in eventos %}
 			<p>{{ evento.titulo }} - {{ evento.get_data_evento }}</p>

@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Crie um novo usuário</title>
+</head>
+<body>
+	<form action="." method="post">
+		{% csrf_token %}
+		<label>Nome</label>
+		<input type="text" name="first_name">
+		<label>Username</label>
+		<input type="text" name="username">
+		<label>Password</label>
+		<input type="password" name="password">
+		<button type="submit">Cadastrar</button>
+	</form>
+	{% for message in messages %}
+		<strong>Erro </strong> {{ message }}
+	{% endfor %}
+</body>
+</html>

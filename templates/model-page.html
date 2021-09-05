@@ -1,9 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
 	{% include "model-header.html" %}
+	<link rel="stylesheet" type="text/css" href="{% static "base.css" %}">
 </head>
 <body>
+	<a href="/logout">logout</a>
 	{% block content %}{% endblock %}
 	{% include "model-footer.html" %}
 </body>

@@ -12,12 +12,19 @@ def login_user(request):
 @login_required(login_url='/login/')
 def lista_eventos(request):
 	user = request.user
-	data_atual = datetime.now()
+	# data_atual = datetime.now()
 	# evento = Eventos.objects.get(id=1)
 	# eventos = Eventos.objects.all()
-	eventos = Eventos.objects.filter(usuario=user)
+	eventos = Eventos.objects.filter(usuario=user, data_evento__gt=data_atual)
 	#__lt ultimos eventos, data_evento__gt=data_atual
 	return render(request, 'agenda.html', {'eventos':eventos})
+
+@login_required(login_url='/login/')
+def historico(request):
+	data_atual = datetime.now()
+	usuario = request.user
+	eventos = Eventos.objects.filter(usuario=usuario, data_evento__lt=data_atual)
+	return render(request, 'historico.html', {'eventos':eventos})
 
 @login_required(login_url='/login/')
 def json_lista_eventos(request):

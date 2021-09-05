@@ -9,11 +9,11 @@
 		<br>
 		<input type="number" name="id" value="{{ evento.id }}" hidden>
 		<br>
-		<input type="text" name="titulo" size="23" value="{{ evento.titulo }}">
+		<input type="text" name="titulo" size="23" value="{{ evento.titulo }}" required>
 		<br>
 		<label>Data do Evento</label>
 		<br>
-		<input type="date" name="data_evento" value="{{ evento.get_data_input_evento }}">
+		<input type="date" name="data_evento" value="{{ evento.get_data_input_evento }}" required>
 		<br>
 		<label>Local</label>
 		<br>

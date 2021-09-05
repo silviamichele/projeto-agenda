@@ -26,3 +26,11 @@ class Eventos(models.Model):
 			return True
 		else:
 			return False
+	
+	def get_evento_proximo(self):
+		proximo = datetime.now() + timedelta(days=2)
+		anterior = datetime.now()
+		if self.data_evento >= anterior and self.data_evento<=proximo:
+			return True
+		else:
+			return False
